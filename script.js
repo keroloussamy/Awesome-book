@@ -5,24 +5,28 @@ window.onload = () => {
   const bookTitle = document.querySelector('#book-title');
   const bookAuthor = document.querySelector('#book-author');
 
+  const store = (books) => {
+    localStorage.setItem('books', JSON.stringify(books));
+  };
+
   const addBook = (title, author) => {
-    let newBook = {
-      title: title,
-      author: author,
+    const newBook = {
+      title,
+      author,
     };
     books.push(newBook);
     store(books);
   };
 
   const displayBooks = () => {
-    let booksLocalStorage = JSON.parse(localStorage.getItem('books'));
+    const booksLocalStorage = JSON.parse(localStorage.getItem('books'));
     books = booksLocalStorage;
     let html = '';
     booksLocalStorage.forEach((book, index) => {
       html += `<div class="book">
                 <h4>${book.title}</h4>
                 <p>${book.author}</p>
-                <button class="removeBtn" id="${index}">Remove</button>
+                <button type="button" class="removeBtn" id="${index}">Remove</button>
                 <hr />
               </div>`;
     });
@@ -44,10 +48,6 @@ window.onload = () => {
     addBook(bookTitle.value, bookAuthor.value);
     displayBooks();
   });
-
-  const store = (books) => {
-    localStorage.setItem('books', JSON.stringify(books));
-  };
 
   displayBooks();
 };
