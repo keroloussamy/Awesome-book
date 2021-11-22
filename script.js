@@ -11,6 +11,8 @@ const addBook = (title, author) => {
     author: author,
   };
   books.push(newBook);
+
+  store(books);
 };
 
 addBooksButton.addEventListener('click', (e) => {
@@ -27,3 +29,7 @@ addBooksButton.addEventListener('click', (e) => {
   div.innerHTML = html;
   document.querySelector('#books-container').appendChild(div);
 });
+
+const store = (books) => {
+  localStorage.setItem('books', JSON.stringify(books));
+}
