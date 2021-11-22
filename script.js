@@ -11,23 +11,27 @@ const addBook = (title, author) => {
     author: author,
   };
   books.push(newBook);
-
   store(books);
 };
+
+const displayBooks = () => {
+  let booksLocalStorage = JSON.parse(localStorage.getItem('books'));
+  let html = '';
+  booksLocalStorage.forEach(book => {
+    html += `<div class="book">
+                <h4>${book.title}</h4>
+                <p>${book.author}</p>
+                <button class="removeBtn">Remove</button>
+                <hr />
+              </div>`;
+  });
+  document.querySelector('#books-container').innerHTML = html;
+}
 
 addBooksButton.addEventListener('click', (e) => {
   e.preventDefault();
   addBook(bookTitle.value, bookAuthor.value);
-
-  let html = `<div class="book">
-                <h4>${bookTitle.value}</h4>
-                <p>${bookAuthor.value}</p>
-                <button class="removeBtn">Remove</button>
-                <hr />
-              </div>`;
-  let div = document.createElement('div');
-  div.innerHTML = html;
-  document.querySelector('#books-container').appendChild(div);
+  displayBooks()
 });
 
 const store = (books) => {
