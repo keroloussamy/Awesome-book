@@ -48,7 +48,7 @@ const bookAuthor = document.querySelector('#book-author');
 
 addBooksButton.addEventListener('click', (e) => {
   e.preventDefault();
-  let book = new Book(bookTitle.value, bookAuthor.value);
+  const book = new Book(bookTitle.value, bookAuthor.value);
   book.addBook();
   Book.displayBooks();
 });
