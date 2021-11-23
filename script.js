@@ -16,7 +16,11 @@ class Book {
   }
 
   static displayBooks() {
-    Book.books = JSON.parse(localStorage.getItem('books'));
+    if (!JSON.parse(localStorage.getItem('books'))) {
+      Book.books = [];
+    } else {
+      Book.books = JSON.parse(localStorage.getItem('books'));
+    }
     let html = '';
     if (Book.books) {
       Book.books.forEach((book, index) => {
@@ -42,14 +46,15 @@ class Book {
   }
 }
 
-const addBooksButton = document.querySelector('#add-book');
+const addBookForm = document.querySelector('form');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
-
-addBooksButton.addEventListener('click', (e) => {
+addBookForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const book = new Book(bookTitle.value, bookAuthor.value);
-  book.addBook();
+  if (/\w/.test(bookTitle.value) && /\w/.test(bookAuthor.value)) {
+    const book = new Book(bookTitle.value, bookAuthor.value);
+    book.addBook();
+  }
   Book.displayBooks();
 });
 
