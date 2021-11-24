@@ -6,6 +6,7 @@
   h4 {
     @apply text-2xl;
   }
+
   table {
     @apply min-w-full divide-y divide-green-500;
   }
@@ -15,19 +16,24 @@
   #books-container {
     @apply border-8 w-2/3 m-auto border-green-400 rounded-lg;
   }
+
   .book-information {
     @apply px-4 py-2;
   }
+
   .book-title {
     @apply text-xl font-bold text-green-800;
   }
+
   .book-author {
     @apply italic text-lg;
   }
+
   .removeBtn {
     @apply border
-    bg-gray-800
-    text-white
+      bg-gray-800
+      text-white
+      uppercase
     px-6
     py-2
     my-2
