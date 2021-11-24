@@ -8,7 +8,6 @@
     "built-tailwind": "tailwindcss build -i style.css -o deploy.css",
     "deploy-tailwind": "NODE_ENV=production npx tailwindcss build -i style.css -o deploy.css"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keroloussamy/Awesome-book.git"

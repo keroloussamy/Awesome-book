@@ -21,16 +21,22 @@ class Book {
     } else {
       Book.books = JSON.parse(localStorage.getItem('books'));
     }
-    let html = '';
+    let html = '<table>';
     if (Book.books) {
       Book.books.forEach((book, index) => {
-        html += `<div class="book">
-                <h4>${book.title}</h4>
-                <p>${book.author}</p>
-                <button type="button" class="removeBtn" id="${index}">Remove</button>
-                <hr />
-              </div>`;
+        html += `<tr class="${index % 2 === 0 ? 'bg-green-100' : ''}">
+          <td class="book-information">
+            <span class="book-title">${book.author}</span>
+            <span class="book-author"> by ${book.author}</span>
+          </td>
+          <td class="text-right">
+            <button type="button" class="removeBtn" id="${index}">
+              Remove
+            </button>
+          </td>
+        </tr>`;
       });
+      html += '</table>';
       document.querySelector('#books-container').innerHTML = html;
 
       const removeBook = document.querySelectorAll('.removeBtn');
