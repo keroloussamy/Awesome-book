@@ -26,7 +26,7 @@ class Book {
       Book.books.forEach((book, index) => {
         html += `<tr class="${index % 2 === 0 ? 'bg-green-100' : ''}">
           <td class="book-information">
-            <span class="book-title">${book.author}</span>
+            <span class="book-title">${book.title}</span>
             <span class="book-author"> by ${book.author}</span>
           </td>
           <td class="text-right">
