@@ -34,10 +34,10 @@
       bg-gray-800
       text-white
       uppercase
-    px-6
-    py-2
-    my-2
-    mx-4
-    rounded-lg;
+      px-6
+      py-2
+      my-2
+      mx-4
+      rounded-lg;
   }
 }
