@@ -652,7 +652,6 @@ table > :not([hidden]) ~ :not([hidden]) {
 }
 
 #books-container {
-  margin: auto;
   width: 66.666667%;
   border-radius: 0.5rem;
   border-width: 8px;
