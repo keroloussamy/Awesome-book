@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="deploy.css" />
   </head>
   <body>
+    <header class="min-w-full border-3 z-10 top-0 left-0 shadow-lg">
+      <nav class="navigation flex justify-between m-auto w-5/6 py-4 ">
+        <div class="logo text-left uppercase text-green-400 font-bold font-serif">
+          Awesome Books
+        </div>
+        <ul class="menu text-right list-none flex gap-8">
+          <li class="menu-item"><a href="#" class="hover:text-green-400">List</a></li>
+          <li class="menu-item"><a href="#" class="hover:text-green-400">Add new</a></li>
+          <li class="menu-item"><a href="#" class="hover:text-green-400">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <article class="w-auto mt-4 text-center">
         <section>
@@ -24,7 +36,11 @@
         <button class="bg-green-400 rounded px-2 py-1 font-serif text-white" type="submit" id="add-book">ADD</button>
       </form>
     </main>
-
+    <footer class="fixed min-w-full border-3 z-10 bottom-0 left-0 shadow-inner text-center">
+      <div class="m-auto py-4">
+        Developed with  ❤️ by William, Kerolous, and Richard
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
