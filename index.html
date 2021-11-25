@@ -7,24 +7,124 @@
     <title>Awesome Books</title>
     <link rel="stylesheet" href="deploy.css" />
   </head>
-  <body>
+  <body class="overflow-y-hidden">
+    <header
+      class="min-w-full fixed border-3 z-10 top-0 left-0  bg-white"
+    >
+      <nav class="navigation flex justify-between m-auto px-20 py-4 shadow-lg">
+        <div
+          class="logo text-left uppercase text-green-400 font-bold font-serif"
+        >
+          Awesome Books
+        </div>
+        <ul class="menu text-right list-none flex gap-8">
+          <li class="menu-item">
+            <a href="#list" class="hover:text-green-400 link-Item1">List</a>
+          </li>
+          <li class="menu-item">
+            <a href="#add_new" class="hover:text-green-400 link-Item2">Add new</a>
+          </li>
+          <li class="menu-item">
+            <a href="#contact" class="hover:text-green-400 link-Item3">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="time" class="text-right mr-20 mt-4"></div>
+    </header>
     <main>
-      <article class="w-auto mt-4 text-center">
-        <section>
-          <h1 class="text-2xl uppercase font-bold text-green-400 font-serif">
-            All books are awesome
-          </h1>
-        </section>
-      </article>
-      <div id="books-container"></div>
-      <form action="#" class="w-1/6 m-auto text-right mt-8">
-        <h3 class="text-center mb-4 text-lg uppercase font-semibold text-green-400 font-serif">Add a new book</h3>
-        <input class="min-w-full border rounded border-green-400 p-1" id="book-title" type="text" placeholder="Title" /><br /><br />
-        <input class="min-w-full border rounded border-green-400 p-1" id="book-author" type="text" placeholder="Author" /><br /><br />
-        <button class="bg-green-400 rounded px-2 py-1 font-serif text-white" type="submit" id="add-book">ADD</button>
-      </form>
-    </main>
+      
+      <section class="h-screen flex flex-col items-center" id="list">
+        <h1
+          class="
+            w-auto
+            text-centertext-2xl
+            uppercase
+            font-bold
+            text-green-400
+            font-serif
+            mt-40
+            text-xl
+          "
+        >
+          All books are awesome
+        </h1>
+        <div
+          class="max-h-96 overflow-y-auto overflow-x-hidden mt-6"
+          id="books-container"
+        ></div>
+        <article class=""></article>
+      </section>
 
-    <script src="script.js"></script>
+      <!-- form section -->
+      <section class="h-screen flex justify-center items-center" id="add_new">
+        <form action="#" class="m-auto text-right w-1/3">
+          <h3
+            class="
+              text-center
+              mb-4
+              text-xl
+              uppercase
+              font-semibold
+              text-green-400
+              font-serif
+            "
+          >
+            Add a new book
+          </h3>
+          <input
+            class="min-w-full border rounded border-green-400 p-1"
+            id="book-title"
+            type="text"
+            placeholder="Title"
+          /><br /><br />
+          <input
+            class="min-w-full border rounded border-green-400 p-1"
+            id="book-author"
+            type="text"
+            placeholder="Author"
+          /><br /><br />
+          <button
+            class="bg-green-400 rounded px-2 py-1 font-serif text-white"
+            type="submit"
+            id="add-book"
+          >
+            ADD BOOK
+          </button>
+        </form>
+      </section>
+
+      <section class="h-screen flex flex-col justify-center items-center" id="contact">
+        <article class="text-2xl">
+          <h4 class="text-center text-6xl mb-8 text-green-400">Contact Information</h4>
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us!</p>
+          <ul class="list-disc list-inside ml-10 mt-6">
+            <li>Our e-mail: mail@gmail.com</li>
+            <li>Our phone number: 0129937183932187</li>
+            <li>Our address: Streetname 22, 6725378 City, Country</li>
+          </ul>
+        </article>
+        
+      </section>
+    </main>
+    <footer
+      class="
+        fixed
+        min-w-full
+        border-3
+        z-10
+        bottom-0
+        left-0
+        shadow-inner
+        text-center
+        bg-white
+      "
+    >
+      <div class="m-auto py-4">
+        Developed with ❤️ by William, Kerolous, and Richard
+      </div>
+    </footer>
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

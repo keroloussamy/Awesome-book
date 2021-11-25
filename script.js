@@ -21,13 +21,13 @@ class Book {
     } else {
       Book.books = JSON.parse(localStorage.getItem('books'));
     }
-    let html = '<table>';
+    let html = '<table class="">';
     if (Book.books) {
       Book.books.forEach((book, index) => {
         html += `<tr class="${index % 2 === 0 ? 'bg-green-100' : ''}">
           <td class="book-information">
-            <span class="book-title">${book.title}</span>
-            <span class="book-author"> by ${book.author}</span>
+            <span class="book-title break-all">${book.title}</span>
+            <span class="book-author break-all"> by ${book.author}</span>
           </td>
           <td class="text-right">
             <button type="button" class="removeBtn" id="${index}">
@@ -64,6 +64,30 @@ addBookForm.addEventListener('submit', (e) => {
   Book.displayBooks();
 });
 
+const linkItem1 = document.querySelector('.link-Item1');
+const linkItem2 = document.querySelector('.link-Item2');
+const linkItem3 = document.querySelector('.link-Item3');
+linkItem1.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem2.classList.remove('text-green-400');
+  linkItem3.classList.remove('text-green-400');
+});
+linkItem2.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem1.classList.remove('text-green-400');
+  linkItem3.classList.remove('text-green-400');
+});
+linkItem3.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem2.classList.remove('text-green-400');
+  linkItem1.classList.remove('text-green-400');
+});
+
 window.onload = () => {
+  const { DateTime } = luxon; // eslint-disable-line
+  const divTime = document.querySelector('#time');
+  const now = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+  divTime.textContent = now;
+
   Book.displayBooks();
 };
