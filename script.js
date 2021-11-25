@@ -64,6 +64,30 @@ addBookForm.addEventListener('submit', (e) => {
   Book.displayBooks();
 });
 
+const linkItem1 = document.querySelector('.link-Item1');
+const linkItem2 = document.querySelector('.link-Item2');
+const linkItem3 = document.querySelector('.link-Item3');
+linkItem1.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem2.classList.remove('text-green-400');
+  linkItem3.classList.remove('text-green-400');
+});
+linkItem2.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem1.classList.remove('text-green-400');
+  linkItem3.classList.remove('text-green-400');
+});
+linkItem3.addEventListener('click', (e) => {
+  e.target.classList.add('text-green-400');
+  linkItem2.classList.remove('text-green-400');
+  linkItem1.classList.remove('text-green-400');
+});
+
 window.onload = () => {
+  const { DateTime } = luxon; // eslint-disable-line
+  const divTime = document.querySelector('#time');
+  const now = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+  divTime.textContent = now;
+
   Book.displayBooks();
 };

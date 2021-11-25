@@ -9,9 +9,9 @@
   </head>
   <body class="overflow-y-hidden">
     <header
-      class="min-w-full fixed border-3 z-10 top-0 left-0 shadow-lg bg-white"
+      class="min-w-full fixed border-3 z-10 top-0 left-0  bg-white"
     >
-      <nav class="navigation flex justify-between m-auto w-5/6 py-4">
+      <nav class="navigation flex justify-between m-auto px-20 py-4 shadow-lg">
         <div
           class="logo text-left uppercase text-green-400 font-bold font-serif"
         >
@@ -19,18 +19,20 @@
         </div>
         <ul class="menu text-right list-none flex gap-8">
           <li class="menu-item">
-            <a href="#list" class="hover:text-green-400">List</a>
+            <a href="#list" class="hover:text-green-400 link-Item1">List</a>
           </li>
           <li class="menu-item">
-            <a href="#add_new" class="hover:text-green-400">Add new</a>
+            <a href="#add_new" class="hover:text-green-400 link-Item2">Add new</a>
           </li>
           <li class="menu-item">
-            <a href="#contact" class="hover:text-green-400">Contact</a>
+            <a href="#contact" class="hover:text-green-400 link-Item3">Contact</a>
           </li>
         </ul>
       </nav>
+      <div id="time" class="text-right mr-20 mt-4"></div>
     </header>
     <main>
+      
       <section class="h-screen flex flex-col items-center" id="list">
         <h1
           class="
@@ -90,6 +92,20 @@
           </button>
         </form>
       </section>
+
+      <section class="h-screen flex flex-col justify-center items-center" id="contact">
+        <article class="text-2xl">
+          <h4 class="text-center text-6xl mb-8 text-green-400">Contact Information</h4>
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us!</p>
+          <ul class="list-disc list-inside ml-10 mt-6">
+            <li>Our e-mail: mail@gmail.com</li>
+            <li>Our phone number: 0129937183932187</li>
+            <li>Our address: Streetname 22, 6725378 City, Country</li>
+          </ul>
+        </article>
+        
+      </section>
     </main>
     <footer
       class="
@@ -108,6 +124,7 @@
         Developed with ❤️ by William, Kerolous, and Richard
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
